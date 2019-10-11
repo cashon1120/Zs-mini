@@ -1,0 +1,30 @@
+<form bindsubmit="formSubmit">
+  <view class="title">请验证4S店预留手机号码</view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">手机号</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" name="phone" bindblur="phoneChange" placeholder="请输入手机号" />
+      </view>
+    </view>
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">验证码</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" name="verCode" type="password" placeholder="请输入验证码" />
+        <view class="getcode" bindtap="handleGetCode">
+          获取验证码
+        </view>
+      </view>
+
+    </view>
+  </view>
+  <view class="formContainer">
+    <button type="primary" loading="{{submitLoading}}" disabled="{{submitLoading}}" form-type="submit">
+      确认
+    </button>
+  </view>
+</form>

@@ -1,0 +1,52 @@
+/**app.wxss**/
+@import 'libs/weui/weui.wxss';
+
+page {
+  font-size: 28rpx !important;
+  color: #808080;
+  background: #f6f6f6;
+}
+.container {
+  padding: 30rpx;
+}
+.flex-container {
+  display: flex;
+  align-items: center;
+}
+.flex-1{
+  flex: 1;
+}
+.h2{
+  font-size: 32rpx;
+  color: #383838;
+}
+.tips{
+  color: #b4b4b4;
+  font-size: 26rpx;
+}
+.title{
+  background: #fff;
+  padding: 20rpx 30rpx;
+  border: 1px solid #ebebeb;
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+}
+
+/*重写weui一些样式 */
+.weui-cells{
+  font-size: 32rpx;
+  background: #fff;
+}
+.weui-cell:active{
+  background: #ebebeb;
+}
+button {
+  font-size: 34rpx;
+}
+.weui-cell_input{
+  padding: 5rpx 15px;
+  margin-bottom:0;
+}

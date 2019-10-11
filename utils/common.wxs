@@ -1,0 +1,52 @@
+var formatFn = {
+  formatVlotageStage: function (state) {
+    var str = ''
+    switch (state) {
+      case '1':
+        str = '正常'
+        break;
+      case '2':
+        str = '低电压报警'
+        break;
+      case '3':
+        str = '设备失联'
+        break;
+      case '4':
+        str = '断电中'
+        break;
+      case '5':
+        str = '自动断电'
+        break;
+      default:
+        str = '未注册'
+        break;
+    }
+    return str
+  },
+
+  setSwitchState: function (state) {
+    var switchState = {
+      checked: false,
+      disabled: false
+    }
+    if (state === 1 || state === 2) {
+      switchState.checked = true
+    }
+    if (state === 3 || state === 0) {
+      switchState.checked = false
+      switchState.disabled = true
+    }
+    if(state === 4){
+      switchState.checked = false
+    }
+    if(state === 5){
+      switchState.checked = false
+      switchState.disabled = true
+    }
+  }
+}
+
+module.exports = {
+  formatVlotageStage: formatFn.formatVlotageStage,
+  setSwitchState: formatFn.setSwitchState
+}

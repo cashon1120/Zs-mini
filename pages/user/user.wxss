@@ -1,0 +1,16 @@
+.start{
+  padding: 56rpx;
+  text-align: center;
+}
+.start .image{
+  overflow: hidden;
+  margin: auto;
+  margin-bottom: 30rpx;
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 100%;
+}
+
+.title{
+  padding-bottom: 40rpx;
+}

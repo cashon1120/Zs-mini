@@ -1,0 +1,30 @@
+<!-- index.wxml -->
+<view class="flex-container top">
+    <view class="image-wrapper flex-1">
+      <image src="../../assets/car.jpg" mode="aspectFill" />
+    </view>
+    <view class="flex-1">{{detailInfo.plate}}
+      <view>电瓶电压：{{detailInfo.voltage}}V</view>
+    </view>
+  </view>
+<view class="container">
+  <view>电瓶电源远程开关纪录</view>
+  <view class='history-table-wrap'>
+    <view class="table">
+      <view class="tr">
+          <view class="th th1">状态</view>
+          <view class="th th2">电压</view>
+          <view class="th th3">操作</view>
+          <view class="th th4">方式</view>
+          <view class="th th5">时间</view>
+      </view>
+      <view class="tr" wx:for="{{recordList}}" wx:key="{{item.id}}">
+        <view class="td td1">正常</view>
+        <view class="td td2">11</view>
+        <view class="td td3">关闭</view>
+        <view class="td td4">自动</view>
+        <view class="td td5">2018/02/12</view>
+      </view>
+    </view>
+ </view>
+</view>

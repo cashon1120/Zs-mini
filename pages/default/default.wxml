@@ -1,0 +1,3 @@
+<view class="start">
+  <button v-if="{{canIUser}}" type="primary"  loading="{{loading}}"class="login-btn" bindgetuserinfo="bindGetUserInfo" open-type="getUserInfo">微信登录</button>
+</view>

@@ -1,0 +1,22 @@
+<view class="start">
+  <view class="image">
+    <open-data type="userAvatarUrl"></open-data>
+  </view>
+</view>
+<view class="weui-cells weui-cells_after-title">
+    <list-item></list-item>
+    <view class="weui-cell weui-cell_access" data-url="/pages/editPassword/editPassword" bindtap="navigateTo">
+      <view class="weui-cell__bd">
+        <view style="display: inline-block; vertical-align: middle">一键救援申请发送</view>
+      </view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </view>
+
+    <view class="weui-cell weui-cell_access" data-url="/pages/login/login" bindtap="calling">
+      <view class="weui-cell__bd">
+        <view style="display: inline-block; vertical-align: middle">服务热线</view>
+      </view>
+      <view class="weui-cell__ft weui-cell__ft_in-access">4008-460-999</view>
+    </view>
+
+</view>
