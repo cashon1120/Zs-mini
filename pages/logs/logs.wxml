@@ -16,6 +16,7 @@
           <view class="th th2">电压</view>
           <view class="th th3">操作</view>
           <view class="th th4">方式</view>
+          <view class="th th4">结果</view>
           <view class="th th5">时间</view>
       </view>
       <view class="tr" wx:for="{{recordList}}" wx:key="{{item.id}}">
@@ -23,6 +24,7 @@
         <view class="td td2">11</view>
         <view class="td td3">关闭</view>
         <view class="td td4">自动</view>
+        <view class="td td4">成功</view>
         <view class="td td5">2018/02/12</view>
       </view>
     </view>
