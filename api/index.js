@@ -47,6 +47,7 @@ export const REQUEST_POWER_SWITCH = data => {
 
 // 操作记录
 export const REQUEST_OPERATION_RECORD = data => {
+  console.log('========'+ data)
   return request({
     url: '/vehicle/operationRecord',
     method: 'POST',

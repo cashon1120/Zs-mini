@@ -1,7 +1,8 @@
 <!-- index.wxml -->
+<wxs module="common" src="../../utils/common.wxs"></wxs>
 <view class="flex-container top">
     <view class="image-wrapper flex-1">
-      <image src="../../assets/car.jpg" mode="aspectFill" />
+      <image src="{{detailInfo.cover || '../../assets/car.jpg'}}" mode="aspectFill" />
     </view>
     <view class="flex-1">{{detailInfo.plate}}
       <view>电瓶电压：{{detailInfo.voltage}}V</view>
@@ -20,12 +21,12 @@
           <view class="th th5">时间</view>
       </view>
       <view class="tr" wx:for="{{recordList}}" wx:key="{{item.id}}">
-        <view class="td td1">正常</view>
-        <view class="td td2">11</view>
-        <view class="td td3">关闭</view>
-        <view class="td td4">自动</view>
-        <view class="td td4">成功</view>
-        <view class="td td5">2018/02/12</view>
+        <view class="td td1">{{common.formatVlotageStage(item.voltageState)}}</view>
+        <view class="td td2">{{item.voltage}}</view>
+        <view class="td td3">{{item.operating === 1 ? '上电' : '断电'}}</view>
+        <view class="td td4">{{item.style==='1' ? '手动' : '自动'}}</view>
+        <view class="td td4">{{item.result}}</view>
+        <view class="td td5">{{item.crtAt}}</view>
       </view>
     </view>
  </view>

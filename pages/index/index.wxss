@@ -34,6 +34,9 @@
   padding-right: 30rpx;
   color: #000;
 }
+.state-off{
+  color: #f00;
+}
 .state-warning{
   color: #ea771b;
 }

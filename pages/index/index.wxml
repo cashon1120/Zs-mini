@@ -2,13 +2,13 @@
 <wxs module="common" src="../../utils/common.wxs"></wxs>
 <view class="container">
   <view class="list" wx:for="{{carList}}" wx:key="{{item.id}}">
-    <view class="plate" bindtap="bindShowDetail" data-id="2">
+    <view class="plate" bindtap="bindShowDetail" data-id="{{item.id}}">
      {{item.plate}}
       <image src="../../assets/arrow.png" class="arrow" mode="aspectFill" />
     </view>
     <view class="flex-container">
       <view class="image-wrapper flex-1">
-        <image src="../../assets/car.jpg" mode="aspectFill" />
+        <image src="{{item.cover || '../../assets/car.jpg'}}" mode="aspectFill" />
       </view>
       <view class="flex-1">
         <view class="motormeter">
@@ -19,8 +19,10 @@
       </view>
     </view>
     <view class="flex-container state-wrapper">
-      <view class="state">{{common.formatVlotageStage(item.vlotageStage)}}</view>
-      <view class="flex-1"></view>
+      <view class="{{item.voltageState === 4 ? 'state state-off' : item.voltageState === 2 ? 'state state-warning': 'state'}}">{{common.formatVlotageStage(item.voltageState)}}</view>
+      <view class="flex-1">
+       {{common.formatVlotageStageText(item.voltageState)}} 
+      </view>
       <view>
         <switch checked="{{common.setSwitchState(item.vlotageStage)}}" bindchange="switchChange" data-id="{{item.id}}" disabled="{{loading}}" class="switch" />
       </view>

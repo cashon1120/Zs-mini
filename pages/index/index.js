@@ -1,6 +1,7 @@
 import {
   REQUEST_FETCH_CAR,
-  REQUEST_POWER_SWITCH
+  REQUEST_POWER_SWITCH,
+  REQUEST_OPERATION_RECORD
 } from '../../api/index'
 const app = getApp()
 
@@ -35,7 +36,19 @@ Page({
       powerState: e.detail.value ? 1 : 2
     }
     REQUEST_POWER_SWITCH(data).then(res => {
-      this.operationRecord(id)
+      console.log(e.detail.value)
+      if (res.data.id){
+        this.operationRecord(res.data.id)
+        wx.showToast({
+          title: '操作成功',
+          icon: 'none'
+        })
+      }else{
+        wx.showToast({
+          title: '操作失败',
+          icon: 'none'
+        })
+      }
     }).catch(() => {
       this.setData({
         loading: false
@@ -61,12 +74,15 @@ Page({
   bindShowDetail: function(e){
     const { id } = e.target.dataset
     const { carList } = this.data
+    console.log(id)
     carList.forEach(item => {
       if(item.id === parseInt(id)){
+        console.log(item)
         app.globalData.detailInfo = {
           id: item.id,
           plate: item.plate,
-          voltage: item.voltage
+          voltage: item.voltage,
+          cover: item.cover
         }
       }
     })

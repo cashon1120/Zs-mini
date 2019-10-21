@@ -52,6 +52,7 @@ Page({
       this.setData({
         submitLoading: false
       })
+      console.log(1)
       wx.navigateTo({
         url: '/pages/index/index',
       })
